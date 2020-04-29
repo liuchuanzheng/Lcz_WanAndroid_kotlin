@@ -11,6 +11,7 @@
         是否愿意支持从右到左(原来RTL就是right-to-left 的缩写...)的布局
     -->
     <application
+        android:name=".MyApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
