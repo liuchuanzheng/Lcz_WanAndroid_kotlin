@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="BaseAppTheme">
+        <!--手机状态栏为暗,字体为白色的-->
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+</resources>

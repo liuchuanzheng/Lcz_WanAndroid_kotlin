@@ -1,11 +1,24 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--可响应手机的暗黑模式-->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
+        <!--Appbar背景色 -->
+        <!--应用程序的主品牌颜色。默认情况下，这是应用到操作栏背景-->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <!--状态栏颜色-->
+        <!--主品牌颜色的深色变体。默认情况下，这是应用到的颜色状态栏(通过statusBarColor)和导航栏(通过navigationBarColor)。-->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--控制各个控件被选中时的颜色,默认的光标等-->
+        <!--明亮的色彩与品牌主色调相得益彰。默认情况下，这是应用的颜色到框架控件(通过colorControlActivated)。-->
         <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+    <style name="AppTheme" parent="BaseAppTheme">
+        <!--手机状态栏为亮,字体为黑色的-->
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
 </resources>
