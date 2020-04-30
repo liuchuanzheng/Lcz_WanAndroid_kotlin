@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <!--可响应手机的暗黑模式-->
@@ -19,6 +19,21 @@
     <style name="AppTheme" parent="BaseAppTheme">
         <!--手机状态栏为亮,字体为黑色的-->
         <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <!--
+        指定应用在凹形屏幕的显示模式
+        // 默认情况，全屏页面不可用刘海区域，非全屏页面可以进行使用
+public static final int LAYOUT_IN_DISPLAY_CUTOUT_MODE_DEFAULT = 0;
+// 允许页面延伸到刘海区域
+public static final int LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES = 1;
+// 不允许使用刘海区域
+public static final int LAYOUT_IN_DISPLAY_CUTOUT_MODE_NEVER = 2;
+        -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:ignore="NewApi">shortEdges</item>
     </style>
 
 </resources>
