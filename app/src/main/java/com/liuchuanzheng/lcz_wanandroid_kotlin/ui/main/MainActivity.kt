@@ -2,6 +2,7 @@ package com.liuchuanzheng.lcz_wanandroid_kotlin.ui.main
 
 import android.os.Bundle
 import com.liuchuanzheng.lcz_wanandroid_kotlin.R
+import com.liuchuanzheng.lcz_wanandroid_kotlin.ext.showToast
 import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.base.BaseActivity
 
 
@@ -19,9 +20,21 @@ import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.base.BaseActivity
  * 设置：日夜间模式、调整亮度、字体大小、清除缓存、检查版本、关于玩安卓、退出登录
  */
 class MainActivity : BaseActivity() {
-    override fun layoutRes() =
-        R.layout.activity_main
+    private var previoisTimeMillis = 0L
+    override fun layoutRes() = R.layout.activity_main
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    }
+
+    override fun onBackPressed() {
+        val currentTimeMillis = System.currentTimeMillis()
+        if (currentTimeMillis - previoisTimeMillis < 2000) {
+            super.onBackPressed()
+        } else {
+            showToast(R.string.press_again_to_exit)
+            previoisTimeMillis = currentTimeMillis
+        }
+
     }
 }
