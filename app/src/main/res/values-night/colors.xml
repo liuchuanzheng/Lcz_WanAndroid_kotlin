@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <!--应用程序的主品牌颜色。默认情况下，这是应用到操作栏背景-->
+    <color name="colorPrimary">#186DB0</color>
+    <!--状态栏颜色-->
+    <!--主品牌颜色的深色变体。默认情况下，这是应用到的颜色状态栏(通过statusBarColor)和导航栏(通过navigationBarColor)。-->
+    <color name="colorPrimaryDark">#0D2437</color>
+    <!--控制各个控件被选中时的颜色,默认的光标等-->
+    <!--明亮的色彩与品牌主色调相得益彰。默认情况下，这是应用的颜色到框架控件(通过colorControlActivated)。-->
+    <color name="colorAccent">#DF972D</color>
 
     <color name="textColorPrimary">#B1B1B1</color>
 
-    <color name="bgColorPrimary">#303030</color>
+    <color name="bgColorPrimary">#686464</color>
 </resources>

@@ -14,6 +14,9 @@
         <!--明亮的色彩与品牌主色调相得益彰。默认情况下，这是应用的颜色到框架控件(通过colorControlActivated)。-->
         <item name="colorAccent">@color/colorAccent</item>
 
+        <!--window背景-->
+        <item name="android:windowBackground">@color/bgColorPrimary</item>
+
     </style>
 
     <style name="AppTheme" parent="BaseAppTheme">
