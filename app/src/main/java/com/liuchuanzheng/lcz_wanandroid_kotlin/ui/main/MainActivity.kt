@@ -1,7 +1,7 @@
-package com.liuchuanzheng.lcz_wanandroid_kotlin
+package com.liuchuanzheng.lcz_wanandroid_kotlin.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.liuchuanzheng.lcz_wanandroid_kotlin.R
 import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.base.BaseActivity
 
 
@@ -19,7 +19,8 @@ import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.base.BaseActivity
  * 设置：日夜间模式、调整亮度、字体大小、清除缓存、检查版本、关于玩安卓、退出登录
  */
 class MainActivity : BaseActivity() {
-    override fun layoutRes() = R.layout.activity_main
+    override fun layoutRes() =
+        R.layout.activity_main
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

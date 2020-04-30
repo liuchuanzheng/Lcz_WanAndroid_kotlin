@@ -1,7 +1,7 @@
 package com.liuchuanzheng.lcz_wanandroid_kotlin.ui.splash
 
 import android.os.Bundle
-import com.liuchuanzheng.lcz_wanandroid_kotlin.MainActivity
+import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.main.MainActivity
 import com.liuchuanzheng.lcz_wanandroid_kotlin.R
 import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.base.BaseActivity
 import com.liuchuanzheng.lcz_wanandroid_kotlin.util.core.ActivityManager
