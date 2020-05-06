@@ -13,6 +13,7 @@
     <color name="textColorThird">#5E5E5E</color>
 
     <color name="bgColorPrimary">#686464</color>
+    <color name="bgColorThird">#262626</color>
 
     <color name="colorRipple">#3F3F3F</color>
     <color name="colorBadge">#F44336</color>
