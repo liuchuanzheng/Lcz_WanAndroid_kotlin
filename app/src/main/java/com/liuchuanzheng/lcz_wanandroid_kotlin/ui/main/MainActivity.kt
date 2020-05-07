@@ -3,6 +3,7 @@ package com.liuchuanzheng.lcz_wanandroid_kotlin.ui.main
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.liuchuanzheng.lcz_wanandroid_kotlin.R
+import com.liuchuanzheng.lcz_wanandroid_kotlin.common.ScrollToTop
 import com.liuchuanzheng.lcz_wanandroid_kotlin.ext.showToast
 import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.base.BaseActivity
 import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.main.discovery.DiscoveryFragment
@@ -45,12 +46,18 @@ class MainActivity : BaseActivity() {
                 showFragment(menuItem.itemId)
                 true
             }
+            setOnNavigationItemReselectedListener { menuItem ->
+                val fragment = fragments.entries.find { it.key == menuItem.itemId }?.value
+                if (fragment is ScrollToTop) {
+                    fragment.scrollToTop()
+                }
+            }
         }
         if (savedInstanceState == null) {
             //选中第一个.否则选中监听不触发任何一个
             val initialItemId = R.id.home
             bottomNavigationView.selectedItemId = initialItemId
-//            showFragment(initialItemId)
+            showFragment(initialItemId)
         }
     }
 

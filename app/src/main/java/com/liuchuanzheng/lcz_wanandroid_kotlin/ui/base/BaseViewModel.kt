@@ -43,7 +43,7 @@ open class BaseViewModel : ViewModel() {
                         cancelBlock?.invoke(e)
                     }
                     else -> {
-                        Logger.i("errorBlock ${e.toString()}")
+                        Logger.i("errorBlock: ${e}")
                         errorBlock?.invoke(e)
                     }
                 }

@@ -13,9 +13,9 @@ import com.liuchuanzheng.lcz_wanandroid_kotlin.ext.putExtras
  * 注意事项:
  */
 object ActivityManager {
-    val activitys = mutableListOf<Activity>()
+    val activities = mutableListOf<Activity>()
     fun start(clazz: Class<out Activity>, params: Map<String, Any> = emptyMap()): Unit {
-        val currentActivity = activitys[activitys.lastIndex]
+        val currentActivity = activities[activities.lastIndex]
         val intent = Intent(currentActivity, clazz)
         params.forEach {
             intent.putExtras(it.key to it.value)
@@ -27,9 +27,10 @@ object ActivityManager {
      * finish指定的一个或多个Activity
      */
     fun finish(vararg clazz: Class<out Activity>) {
-        activitys.forEach {
-            clazz.contains(it::class.java)
-            it.finish()
+        activities.forEach { activiy ->
+            if (clazz.contains(activiy::class.java)) {
+                activiy.finish()
+            }
         }
     }
 }

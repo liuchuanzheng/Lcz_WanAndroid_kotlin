@@ -38,10 +38,10 @@ class MyApplication : Application() {
         //记录打开的activity.方便随时管理
         registerActivityLifecycleCallbacks(ActivityLifecycleCallBacksAdapter(
             onActivityCreatedBlock = { activity, savedInstanceState ->
-                ActivityManager.activitys.add(activity)
+                ActivityManager.activities.add(activity)
             },
             onActivityDestroyedBlock = { activity ->
-                ActivityManager.activitys.remove(activity)
+                ActivityManager.activities.remove(activity)
             }
         ))
 

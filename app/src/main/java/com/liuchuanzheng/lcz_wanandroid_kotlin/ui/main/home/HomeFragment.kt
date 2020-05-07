@@ -5,8 +5,10 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.google.android.material.appbar.AppBarLayout
 import com.liuchuanzheng.lcz_wanandroid_kotlin.R
+import com.liuchuanzheng.lcz_wanandroid_kotlin.common.ScrollToTop
 import com.liuchuanzheng.lcz_wanandroid_kotlin.common.SimpleFragmentPagerAdapter
 import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.base.BaseFragment
+import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.main.home.latest.LatestFragment
 import com.liuchuanzheng.lcz_wanandroid_kotlin.ui.main.home.popular.PopularFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -18,7 +20,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
  * 作用:
  * 注意事项:
  */
-class HomeFragment : BaseFragment() {
+class HomeFragment : BaseFragment(), ScrollToTop {
     private lateinit var fragments: List<Fragment>
     override fun layoutRes(): Int {
         return R.layout.fragment_home
@@ -32,7 +34,7 @@ class HomeFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         fragments = listOf(
             PopularFragment.newInstance(),
-            PopularFragment.newInstance(),
+            LatestFragment.newInstance(),
             PopularFragment.newInstance(),
             PopularFragment.newInstance(),
             PopularFragment.newInstance()
@@ -54,5 +56,13 @@ class HomeFragment : BaseFragment() {
 
         }
 
+    }
+
+    override fun scrollToTop() {
+        if (!this::fragments.isInitialized) return
+        val currentFragment = fragments[viewPager.currentItem]
+        if (currentFragment is ScrollToTop && currentFragment.isVisible) {
+            currentFragment.scrollToTop()
+        }
     }
 }
